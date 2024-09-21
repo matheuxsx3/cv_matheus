@@ -1,11 +1,12 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import { useThemeContext } from "../../contexts/ThemeContext";
+import { useThemeContext } from "../../contexts/ThemeContext"; // Usar o hook
 
 function ChooseTheme() {
-  const { mode, setMode } = useThemeContext();
+  const { mode, setMode } = useThemeContext(); // Usa o hook para acessar o contexto
 
   const textColor = mode === "dark" ? "white" : "black";
   const backgroundColor = mode === "dark" ? "#424242" : "white";
+  const selectBackgroundColor = mode === "dark" ? "#121212" : "#white"; // Cor de fundo para o select
 
   return (
     <div className="flex items-center rounded-md p-2">
@@ -22,29 +23,23 @@ function ChooseTheme() {
             setMode(event.target.value as "system" | "light" | "dark")
           }
           sx={{
-            color: textColor,
-            bgcolor: backgroundColor,
+            color: textColor, 
+            backgroundColor: selectBackgroundColor,
             "& .MuiSelect-icon": {
-              color: textColor,
+              color: textColor, 
             },
           }}
           MenuProps={{
             PaperProps: {
               sx: {
-                color: textColor,
+                color: textColor, 
+                bgcolor: backgroundColor, 
               },
             },
           }}
         >
-          <MenuItem value="system">
-            {mode === "dark" ? "System" : "System"}
-          </MenuItem>
-          <MenuItem value="light">
-            {mode === "dark" ? "Claro" : "Claro"}
-          </MenuItem>
-          <MenuItem value="dark">
-            {mode === "dark" ? "Escuro" : "Escuro"}
-          </MenuItem>
+          <MenuItem value="light">Claro</MenuItem>
+          <MenuItem value="dark">Escuro</MenuItem>
         </Select>
       </FormControl>
     </div>

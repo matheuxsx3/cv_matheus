@@ -1,60 +1,71 @@
 import {
+  createTheme,
+  CssBaseline,
+  ThemeProvider as MuiThemeProvider,
+} from "@mui/material";
+import {
   createContext,
-  useContext,
-  useState,
   ReactNode,
+  useContext,
   useEffect,
+  useState,
 } from "react";
 
-interface ThemeContextProps {
-  mode: "system" | "light" | "dark";
-  setMode: (mode: "system" | "light" | "dark") => void;
-  textColor: string;
-  backgroundColor: string;
+interface ThemeContextType {
+  mode: "light" | "dark" | "system";
+  setMode: (mode: "light" | "dark" | "system") => void;
+  theme: any;
 }
 
-const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [mode, setMode] = useState<"system" | "light" | "dark">("system");
+export const useThemeContext = () => {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error("useThemeContext must be used within a ThemeProvider");
+  }
+  return context;
+};
 
-  // Efeito para aplicar o tema no body e definir cores
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
+  const [mode, setMode] = useState<"light" | "dark" | "system">("system");
+
+  // Lógica para o modo "sistema"
+  const getSystemTheme = () => {
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+
   useEffect(() => {
-    const prefersDarkMode = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-
-    const themeMode =
-      mode === "system" ? (prefersDarkMode ? "dark" : "light") : mode;
-
-    document.body.className =
-      themeMode === "dark" ? "bg-gray-900 text-white" : "bg-white text-black";
+    if (mode === "system") {
+      setMode(getSystemTheme());
+    }
   }, [mode]);
 
-  const prefersDarkMode = window.matchMedia(
-    "(prefers-color-scheme: dark)"
-  ).matches;
-  const textColor =
-    mode === "dark" || (mode === "system" && prefersDarkMode)
-      ? "white"
-      : "black";
-  const backgroundColor =
-    mode === "dark" || (mode === "system" && prefersDarkMode)
-      ? "gray.800"
-      : "white";
+  const theme = createTheme({
+    palette: {
+      mode: mode === "system" ? getSystemTheme() : mode,
+    },
+  });
+
+  useEffect(() => {
+    // Aplicar cor de fundo e texto ao body conforme o tema
+    if (mode === "dark") {
+      document.body.style.backgroundColor = "#121212"; // Cor do modo escuro
+      document.body.style.color = "white";
+    } else {
+      document.body.style.backgroundColor = "white"; // Cor do modo claro
+      document.body.style.color = "black";
+    }
+  }, [mode]);
 
   return (
-    <ThemeContext.Provider
-      value={{ mode, setMode, textColor, backgroundColor }}
-    >
-      {children}
+    <ThemeContext.Provider value={{ mode, setMode, theme }}>
+      <MuiThemeProvider theme={theme}>
+        <CssBaseline />
+        {children}
+      </MuiThemeProvider>
     </ThemeContext.Provider>
   );
-}
-
-export function useThemeContext() {
-  const context = useContext(ThemeContext);
-  if (!context)
-    throw new Error("useThemeContext must be used within a ThemeProvider");
-  return context;
-}
+};
