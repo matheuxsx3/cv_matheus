@@ -40,8 +40,8 @@ export default function AboutMe() {
           <div>
             <div className="w-1/3 flex items-center justify-center">
               <img
-                className="w-32 h-32 rounded-full" // Ajuste conforme necessário
-                src="conteudo/matheus.jpeg"
+                className="w-32 h-32 rounded-full"
+                src="https://github.com/matheuxsx3/cv_matheus/blob/main/conteudo/matheus.jpeg?raw=true"
                 alt="Matheus Pereira da Silva"
               />
             </div>
