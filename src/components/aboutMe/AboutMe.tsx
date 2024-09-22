@@ -1,7 +1,6 @@
 export default function AboutMe() {
   return (
     <div className="flex mx-1 mt-28 w-full">
-      {/* Seção da apresentação */}
       <div className="flex flex-col ">
         <div className="flex-1">
           <h2 className="text-xl font-bold mb-1">MATHEUS PEREIRA DA SILVA</h2>
