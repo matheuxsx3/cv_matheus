@@ -55,14 +55,14 @@ export default function AboutMe() {
       <div className="flex flex-col">
         <div className="mb-3">
           <h3 className="text-lg font-semibold mb-1">OBJETIVO PROFISSIONAL</h3>
-          <p className="text-base">
+          <p>
             Atuar na área de TI, especialmente no desenvolvimento de softwares.
           </p>
         </div>
 
         <div className="mb-3">
           <h3 className="text-lg font-semibold mb-1">RESUMO PROFISSIONAL</h3>
-          <p className="text-base">
+          <p>
             Suporte comercial PJ (6 meses). Graduando em Gestão da Tecnologia da
             Informação. Bootcamp de programação (447 horas) na ONG Generation
             Brasil. Hackaton de programação (42 RIO). Tecnologias: Java 17,
@@ -77,7 +77,7 @@ export default function AboutMe() {
           <h3 className="text-lg font-semibold mb-1">
             EXPERIÊNCIAS PROFISSIONAIS
           </h3>
-          <p className="text-base">
+          <p>
             <strong>
               Youngest - Suporte Comercial (PJ) | 11/2023 – 05/2024
             </strong>
@@ -92,7 +92,7 @@ export default function AboutMe() {
 
         <div className="mb-3">
           <h3 className="text-lg font-semibold mb-1">EDUCAÇÃO</h3>
-          <p className="text-base">
+          <p>
             <strong>Graduação - Gestão da Tecnologia da Informação</strong> |
             Data de conclusão prevista: 03/2025
             <br />
@@ -107,7 +107,7 @@ export default function AboutMe() {
 
         <div className="mb-3">
           <h3 className="text-lg font-semibold mb-1">IDIOMAS</h3>
-          <p className="text-base">
+          <p>
             Inglês - Básico | boa leitura, escrita e conversação.
             <br />
             Espanhol - Básico
@@ -134,7 +134,7 @@ export default function AboutMe() {
             </a>
           </div>
           <div>
-            <p className="text-base">
+            <p>
               <strong>MERCADELA</strong> - Sistema de Marketplace que visa
               fomentar a igualdade de gênero e o empoderamento feminino com base
               em empreendedorismo.
@@ -149,7 +149,7 @@ export default function AboutMe() {
               </a>
             </p>
           </div>
-          <div className="text-base">
+          <div>
             <p>
               <strong>CV-MATHEUS</strong> - Currículo desenvolvido em React.
             </p>
@@ -177,7 +177,7 @@ export default function AboutMe() {
             </p>
           </div>
           <div>
-            <p className="text-base">
+            <p>
               <strong>BLOG PESSOAL</strong>
               <br />
               <a
@@ -211,7 +211,7 @@ export default function AboutMe() {
           <h3 className="text-lg font-semibold mb-1">
             CURSOS EXTRACURRICULARES & CERTIFICAÇÕES
           </h3>
-          <p className="text-base">
+          <p>
             ARQUITETURA DE MICROSSERVIÇOS: PADRÃO SAGA ORQUESTRADO - UDEMY- 2024
             <br />
             AWS CUSTOMER-CENTRIC – TD SYNNEX – 2024
