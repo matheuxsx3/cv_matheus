@@ -1,7 +1,9 @@
 export default function AboutMe() {
   return (
-    <div className="flex mx-1 mt-28 w-full">
-      <div className="flex flex-col ">
+    <div className="flex flex-col mx-1 mt-28 w-full">
+      {/* Seção de informações pessoais e imagem lado a lado */}
+      <div className="flex mb-3">
+        {/* Coluna da esquerda - Informações textuais */}
         <div className="flex-1">
           <h2 className="text-xl font-bold mb-1">MATHEUS PEREIRA DA SILVA</h2>
           <p className="text-base mb-3">
@@ -37,17 +39,20 @@ export default function AboutMe() {
               https://www.linkedin.com/in/matheus-ps-dev/
             </a>
           </p>
-          <div>
-            <div className="w-1/3 flex items-center justify-center">
-              <img
-                className="w-32 h-32 rounded-full" // Ajuste conforme necessário
-                src="conteudo/matheus.jpeg"
-                alt="Matheus Pereira da Silva"
-              />
-            </div>
-          </div>
         </div>
 
+        {/* Coluna da direita - Imagem */}
+        <div className="w-1/3 flex items-center justify-center">
+          <img
+            className="w-32 h-32 rounded-full"
+            src="https://github.com/matheuxsx3/cv_matheus/blob/main/conteudo/matheus.jpeg?raw=true"
+            alt="image of Matheus Pereira da Silva"
+          />
+        </div>
+      </div>
+
+      {/* Conteúdo restante organizado em uma coluna */}
+      <div className="flex flex-col">
         <div className="mb-3">
           <h3 className="text-lg font-semibold mb-1">OBJETIVO PROFISSIONAL</h3>
           <p className="text-base">
@@ -111,29 +116,95 @@ export default function AboutMe() {
 
         <div className="mb-3">
           <h3 className="text-lg font-semibold mb-1">PORTFÓLIO</h3>
-          <p className="text-base">
-            <strong>MERCADELA</strong> - Sistema de Marketplace que visa
-            fomentar a igualdade de gênero e o empoderamento feminino com base
-            em empreendedorismo.
-            <br />
+          <div>
+            <p>
+              <strong>BANCO DIGITAL</strong> - Sistema de microsserviços baseado
+              no padrão Saga, orquestrado com Apache Kafka. A arquitetura
+              utiliza APIs REST desenvolvidas em Java (Spring) e front-end em
+              JavaScript (React + TypeScript), com armazenamento de dados em
+              MongoDB e PostgreSQL.
+            </p>
             <a
-              href="https://github.com/Grupo4-Generation"
+              href="https://github.com/matheuxsx3/banco-digital"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 hover:underline"
             >
-              https://github.com/Grupo4-Generation
+              https://github.com/matheuxsx3/banco-digital
             </a>
-            <br />
+          </div>
+          <div>
+            <p className="text-base">
+              <strong>MERCADELA</strong> - Sistema de Marketplace que visa
+              fomentar a igualdade de gênero e o empoderamento feminino com base
+              em empreendedorismo.
+              <br />
+              <a
+                href="https://github.com/Grupo4-Generation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline"
+              >
+                https://github.com/Grupo4-Generation
+              </a>
+            </p>
+          </div>
+          <div className="text-base">
+            <p>
+              <strong>CV-MATHEUS</strong> - Currículo desenvolvido em React.
+            </p>
+            <p>
+              Dev:
+              <a
+                href="https://github.com/matheuxsx3/cv_matheus"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline"
+              >
+                https://github.com/matheuxsx3/cv_matheus
+              </a>
+            </p>
+            <p>
+              Prod:
+              <a
+                href="https://matheuxsx3.github.io/cv_matheus/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline"
+              >
+                https://matheuxsx3.github.io/cv_matheus/
+              </a>
+            </p>
+          </div>
+          <div>
+            <p className="text-base">
+              <strong>BLOG PESSOAL</strong>
+              <br />
+              <a
+                href="https://github.com/matheuxsx3/blogpessoal-BACKEND"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline"
+              >
+                https://github.com/matheuxsx3/blogpessoal-BACKEND
+              </a>
+            </p>
+          </div>
+          <div>
+            <p>
+              <strong>PADARIA</strong> - Sistema básico offline de “E-commerce”,
+              criado com Java sem uso de frameworks, com intuito de treinar a
+              lógica de programação utilizando os conceitos da API REST.
+            </p>
             <a
-              href="https://mercadela-front.vercel.app/"
+              href="https://github.com/matheuxsx3/Padaria"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 hover:underline"
             >
-              https://mercadela-front.vercel.app/
+              https://github.com/matheuxsx3/Padaria
             </a>
-          </p>
+          </div>
         </div>
 
         <div className="mb-3">
@@ -153,11 +224,9 @@ export default function AboutMe() {
             <br />
             AWS CLOUD ECONOMIC FOR STARTUPS – AWS – 10H - 2023
             <br />
-            JAVA - ROCKETSEAT - 5H - 2023
+            JAVA - ROCKETSEAT - 2022
             <br />
-            PYTHON: DJANGO - PYTHONANDO – 10H – 2023
-            <br />
-            PYTHON – MIMO – 100H- 2023
+            HTML | CSS | JAVASCRIPT - ROCKESEAT - 2021
           </p>
         </div>
       </div>
