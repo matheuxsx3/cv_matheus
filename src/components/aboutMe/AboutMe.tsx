@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function AboutMe() {
   return (
     <div className="flex flex-col mx-1 mt-28 w-full relative z-10">
