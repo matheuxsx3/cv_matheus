@@ -29,8 +29,8 @@ function Stars(props: React.ComponentProps<typeof Points>) {
     }
   });
 
-  return (
-    <group rotation={[0, 0, Math.PI / 4]}>
+  return (<></>
+    /*<group rotation={[0, 0, Math.PI / 4]}>
       <Points
         ref={ref}
         positions={sphere}
@@ -46,6 +46,6 @@ function Stars(props: React.ComponentProps<typeof Points>) {
           depthWrite={false}
         />
       </Points>
-    </group>
+    </group>*/
   );
 }
