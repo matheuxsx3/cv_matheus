@@ -1,9 +1,9 @@
+import React from "react";
+
 export default function AboutMe() {
   return (
-    <div className="flex flex-col mx-1 mt-28 w-full">
-      {/* Seção de informações pessoais e imagem lado a lado */}
+    <div className="flex flex-col mx-1 mt-28 w-full relative z-10">
       <div className="flex mb-3">
-        {/* Coluna da esquerda - Informações textuais */}
         <div className="flex-1">
           <h2 className="text-xl font-bold mb-1">MATHEUS PEREIRA DA SILVA</h2>
           <p className="text-base mb-3">
@@ -46,7 +46,7 @@ export default function AboutMe() {
           <img
             className="w-32 h-32 rounded-full"
             src="https://github.com/matheuxsx3/cv_matheus/blob/main/conteudo/matheus.jpeg?raw=true"
-            alt="image of Matheus Pereira da Silva"
+            alt="imagem de Matheus Pereira da Silva"
           />
         </div>
       </div>
@@ -212,7 +212,8 @@ export default function AboutMe() {
             CURSOS EXTRACURRICULARES & CERTIFICAÇÕES
           </h3>
           <p>
-            ARQUITETURA DE MICROSSERVIÇOS: PADRÃO SAGA ORQUESTRADO - UDEMY- 2024
+            ARQUITETURA DE MICROSSERVIÇOS: PADRÃO SAGA ORQUESTRADO - UDEMY -
+            2024
             <br />
             AWS CUSTOMER-CENTRIC – TD SYNNEX – 2024
             <br />
@@ -226,7 +227,7 @@ export default function AboutMe() {
             <br />
             JAVA - ROCKETSEAT - 2022
             <br />
-            HTML | CSS | JAVASCRIPT - ROCKESEAT - 2021
+            HTML | CSS | JAVASCRIPT - ROCKETSEAT - 2021
           </p>
         </div>
       </div>

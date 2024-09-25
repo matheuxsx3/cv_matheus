@@ -106,7 +106,6 @@ export default function Nav() {
                 <MenuItem>Experiência</MenuItem>
                 <MenuItem>Portfólio</MenuItem>
                 <MenuItem>Contato</MenuItem>
-                <MenuItem>Blog</MenuItem>
               </Box>
             </Drawer>
           </Box>
