@@ -42,7 +42,7 @@ export default function AboutMe() {
         {/* Coluna da direita - Imagem */}
         <div className="w-1/3 flex items-center justify-center">
           <img
-            className="w-32 h-32 rounded-full"
+            className="w-32 h-32"
             src="https://github.com/matheuxsx3/cv_matheus/blob/main/conteudo/NoBgMatheus.png?raw=true"
             alt="imagem de Matheus Pereira da Silva"
           />
