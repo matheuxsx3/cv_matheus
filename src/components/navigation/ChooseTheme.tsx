@@ -5,8 +5,8 @@ function ChooseTheme() {
   const { mode, setMode } = useThemeContext(); // Usa o hook para acessar o contexto
 
   const textColor = mode === "dark" ? "white" : "black";
-  const backgroundColor = mode === "dark" ? "#424242" : "white";
-  const selectBackgroundColor = mode === "dark" ? "#121212" : "#white"; // Cor de fundo para o select
+  const backgroundColor = mode === "dark" ? "#121212" : "white";
+  const selectBackgroundColor = mode === "dark" ? "#121212" : "white"; // Cor de fundo para o select
 
   return (
     <div className="flex items-center rounded-md p-2">

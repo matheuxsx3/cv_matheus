@@ -1,4 +1,3 @@
-import * as React from "react";
 import { alpha, styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
@@ -12,6 +11,9 @@ import Drawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import ChooseTheme from "./ChooseTheme";
+import { Modal, Typography } from "@mui/material";
+import { useState } from "react";
+import ImageModal from "./ImageModal";
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: "flex",
@@ -28,7 +30,7 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 }));
 
 export default function Nav() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
@@ -50,6 +52,7 @@ export default function Nav() {
             sx={{ flexGrow: 1, display: "flex", alignItems: "center", px: 0 }}
           >
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
+              <ImageModal />
               <Button variant="text" color="info" size="small">
                 Sobre Mim
               </Button>
@@ -80,8 +83,9 @@ export default function Nav() {
               </Button>
             </Box>
           </Box>
+
           <Box>
-           <ChooseTheme/>
+            <ChooseTheme />
           </Box>
           <Box sx={{ display: { sm: "flex", md: "none" } }}>
             <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
