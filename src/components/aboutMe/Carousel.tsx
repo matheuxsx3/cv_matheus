@@ -20,21 +20,21 @@ const Carousel: React.FC = () => {
       <Slider {...settings}>
         <div>
           <img
-            src="conteudo\teste\generationRj.jpg"
+            src="https://github.com/matheuxsx3/cv_matheus/blob/main/conteudo/teste/generationRj.jpg?raw=true"
             alt="Imagem 1"
             style={{ width: "100%", borderRadius: "8px" }}
           />
         </div>
         <div>
           <img
-            src="conteudo\teste\mercadelaLogo.png"
+            src="https://github.com/matheuxsx3/cv_matheus/blob/main/conteudo/teste/mercadelaLogo.png?raw=true"
             alt="Imagem 2"
             style={{ width: "100%", borderRadius: "8px" }}
           />
         </div>
         <div>
           <img
-            src="conteudo\teste\padaria.jpg"
+            src="https://github.com/matheuxsx3/cv_matheus/blob/main/conteudo/teste/padaria.jpg?raw=true"
             alt="Imagem 3"
             style={{ width: "100%", borderRadius: "8px" }}
           />

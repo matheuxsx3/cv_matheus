@@ -16,7 +16,6 @@ import ImageModal from "./ImageModal";
 import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
 import WorkHistoryOutlinedIcon from "@mui/icons-material/WorkHistoryOutlined";
 import CodeOutlinedIcon from "@mui/icons-material/CodeOutlined";
-import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
 import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOutlined";
 import WavingHandOutlinedIcon from "@mui/icons-material/WavingHandOutlined";
 import { useThemeContext } from "../../contexts/ThemeContext";
