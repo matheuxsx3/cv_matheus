@@ -10,7 +10,7 @@ export default function ImageModal() {
     <>
       <Button onClick={handleModalOpen}>
         <img
-          className="w-20 h-20"
+          className=" w-20 h-20"
           src="https://github.com/matheuxsx3/cv_matheus/blob/main/conteudo/NoBgMatheus.png?raw=true"
           alt="image of Matheus Pereira da Silva"
         />

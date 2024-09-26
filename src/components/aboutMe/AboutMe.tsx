@@ -111,33 +111,6 @@ export default function App() {
         </Box>
       </motion.section>
 
-      {/* Experiências Profissionais */}
-      <motion.section
-        id="experiencia"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-        variants={sectionVariants}
-      >
-        <Box sx={{ my: 10 }}>
-          <Typography variant="h4" component="h2" gutterBottom>
-            EXPERIÊNCIAS PROFISSIONAIS
-          </Typography>
-          <Typography variant="body1" component="p">
-            <strong>
-              Youngest - Suporte Comercial (PJ) | 11/2023 – 05/2024
-            </strong>{" "}
-            <br />
-            Desenvolvimento de software da empresa utilizando WordPress da
-            Hostinger. Revenda B2B de produtos de informática através de
-            licitações e compras diretas. Certificações em plataformas de
-            distribuidores e fabricantes. Comunicação com clientes. Suporte
-            técnico, esclarecendo dúvidas e garantindo a satisfação do cliente.
-          </Typography>
-        </Box>
-      </motion.section>
-
       {/* Educação */}
       <motion.section
         id="educacao"
@@ -165,22 +138,29 @@ export default function App() {
         </Box>
       </motion.section>
 
-      {/* Idiomas */}
+      {/* Experiências Profissionais */}
       <motion.section
-        id="idiomas"
+        id="experiencia"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 1.0 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
         variants={sectionVariants}
       >
         <Box sx={{ my: 10 }}>
           <Typography variant="h4" component="h2" gutterBottom>
-            IDIOMAS
+            EXPERIÊNCIAS PROFISSIONAIS
           </Typography>
           <Typography variant="body1" component="p">
-            Inglês - Básico | boa leitura, escrita e conversação. <br />
-            Espanhol - Básico
+            <strong>
+              Youngest - Suporte Comercial (PJ) | 11/2023 – 05/2024
+            </strong>{" "}
+            <br />
+            Desenvolvimento de software da empresa utilizando WordPress da
+            Hostinger. Revenda B2B de produtos de informática através de
+            licitações e compras diretas. Certificações em plataformas de
+            distribuidores e fabricantes. Comunicação com clientes. Suporte
+            técnico, esclarecendo dúvidas e garantindo a satisfação do cliente.
           </Typography>
         </Box>
       </motion.section>

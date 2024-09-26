@@ -46,8 +46,11 @@ export default function Nav() {
   // Função para navegar até a seção ao clicar em um botão
   const handleScrollToSection = (id: string) => {
     const section = document.getElementById(id);
+    const navbarHeight = 140; // Ajusta o valor conforme a altura da navbar
+
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      const sectionPosition = section.offsetTop - navbarHeight; // Define um deslocamento para evitar sobreposição
+      window.scrollTo({ top: sectionPosition, behavior: "smooth" });
     }
   };
 
@@ -99,6 +102,7 @@ export default function Nav() {
                   <WavingHandOutlinedIcon />
                   <span>Apresentação</span>
                 </Button>
+
                 <Button
                   variant="text"
                   size="small"
@@ -130,17 +134,6 @@ export default function Nav() {
                 >
                   <CodeOutlinedIcon />
                   <span>Portfólio</span>
-                </Button>
-
-                <Button
-                  variant="text"
-                  size="small"
-                  className="flex flex-col items-center"
-                  sx={{ color: theme.palette.text.primary }}
-                  onClick={() => handleScrollToSection("contato")}
-                >
-                  <ContactPageOutlinedIcon />
-                  <span>Contato</span>
                 </Button>
 
                 <Button
@@ -202,6 +195,7 @@ export default function Nav() {
                   >
                     Apresentação
                   </MenuItem>
+
                   <MenuItem
                     onClick={() => {
                       handleScrollToSection("educacao");
@@ -226,14 +220,7 @@ export default function Nav() {
                   >
                     Portfólio
                   </MenuItem>
-                  <MenuItem
-                    onClick={() => {
-                      handleScrollToSection("contato");
-                      toggleDrawer(false)();
-                    }}
-                  >
-                    Contato
-                  </MenuItem>
+
                   <MenuItem
                     onClick={() => {
                       handleScrollToSection("certificacoes");
