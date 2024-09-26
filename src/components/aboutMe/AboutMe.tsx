@@ -1,6 +1,12 @@
-import { Box, Container, Typography, Link } from "@mui/material";
+import { Box, Container, Typography, Link, Button } from "@mui/material";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import EmailIcon from "@mui/icons-material/Email";
+import ImageCarousel from "./Carousel";
 
 // Animação para as seções
 const sectionVariants = {
@@ -38,33 +44,70 @@ export default function App() {
         transition={{ duration: 0.5 }}
         variants={sectionVariants}
       >
-        <Box sx={{ my: 10 }}>
-          <Typography variant="h3" component="h1" gutterBottom>
-            MATHEUS PEREIRA DA SILVA
-          </Typography>
-          <Typography variant="h5" component="p">
-            20 anos | São Gonçalo – RJ
-          </Typography>
-          <Typography variant="body1" component="p">
-            Telefone: (21) 99043-3085 <br />
-            E-mail:{" "}
-            <Link href="mailto:matheus.s280604@gmail.com">
-              matheus.s280604@gmail.com
-            </Link>{" "}
-            <br />
-            GitHub:{" "}
-            <Link href="https://github.com/matheuxsx3" target="_blank">
-              github.com/matheuxsx3
-            </Link>{" "}
-            <br />
-            LinkedIn:{" "}
-            <Link
-              href="https://www.linkedin.com/in/matheus-ps-dev/"
-              target="_blank"
-            >
-              linkedin.com/in/matheus-ps-dev
-            </Link>
-          </Typography>
+        <Box sx={{ py: 5 }}>
+          <div className="container">
+            <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16">
+              <div>
+                <p>Bem-vindo! eu sou... </p>
+                <h1 className="mt-5 text-4xl font-bold">
+                  Matheus Pereira da Silva
+                </h1>
+                <p className="mb-5"> 20 anos | Rio de Janeiro</p>
+                <p>Desenvolvedor de Software Full-Stack</p>
+
+                <div className="mt-5 flex">
+                  <Button
+                    onClick={() =>
+                      window.open(
+                        "https://web.whatsapp.com/send/?phone=5521990433085&text&type=phone_number&app_absent=0",
+                        "_blank"
+                      )
+                    }
+                    color="info"
+                  >
+                    <WhatsAppIcon />
+                  </Button>
+                  <Button
+                    onClick={() => window.open("https://github.com/matheuxsx3")}
+                    color="info"
+                  >
+                    <GitHubIcon />
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      window.location.href = "mailto:matheus.s280604@gmail.com";
+                    }}
+                  >
+                    <EmailIcon />
+                  </Button>
+                  <Button
+                    onClick={() =>
+                      window.open(
+                        "https://www.linkedin.com/in/matheus-ps-dev/",
+                        "_blank"
+                      )
+                    }
+                    color="info"
+                  >
+                    <LinkedInIcon />
+                  </Button>
+                  <Button
+                    onClick={() =>
+                      window.open(
+                        "https://www.instagram.com/matheuxsx3/",
+                        "_blank"
+                      )
+                    }
+                    color="info"
+                  >
+                    <InstagramIcon />
+                  </Button>
+                </div>
+              </div>
+
+              <ImageCarousel />
+            </div>
+          </div>
         </Box>
       </motion.section>
 
