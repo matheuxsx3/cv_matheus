@@ -1,4 +1,4 @@
-import { alpha, styled } from "@mui/material/styles";
+import { alpha, styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -13,11 +13,18 @@ import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import ChooseTheme from "./ChooseTheme";
 import { useState } from "react";
 import ImageModal from "./ImageModal";
+import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
+import WorkHistoryOutlinedIcon from "@mui/icons-material/WorkHistoryOutlined";
+import CodeOutlinedIcon from "@mui/icons-material/CodeOutlined";
+import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
+import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOutlined";
+import WavingHandOutlinedIcon from "@mui/icons-material/WavingHandOutlined";
+import { useThemeContext } from "../../contexts/ThemeContext";
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
-  justifyContent: "space-between", // Alinhamento correto entre os itens
+  justifyContent: "space-between",
   flexShrink: 0,
   borderRadius: `calc(${theme.shape.borderRadius}px + 8px)`,
   backdropFilter: "blur(24px)",
@@ -30,9 +37,18 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const { theme } = useThemeContext();
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
+  };
+
+  // Função para navegar até a seção ao clicar em um botão
+  const handleScrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -73,25 +89,71 @@ export default function Nav() {
                 }}
               >
                 <ImageModal />
+                <Button
+                  variant="text"
+                  size="small"
+                  className="flex flex-col items-center"
+                  sx={{ color: theme.palette.text.primary }}
+                  onClick={() => handleScrollToSection("apresentacao")}
+                >
+                  <WavingHandOutlinedIcon />
+                  <span>Apresentação</span>
+                </Button>
+                <Button
+                  variant="text"
+                  size="small"
+                  className="flex flex-col items-center"
+                  sx={{ color: theme.palette.text.primary }}
+                  onClick={() => handleScrollToSection("educacao")}
+                >
+                  <SchoolOutlinedIcon />
+                  <span>Educação</span>
+                </Button>
 
-                <Button variant="text" color="info" size="small">
-                  Sobre Mim
+                <Button
+                  variant="text"
+                  size="small"
+                  className="flex flex-col items-center"
+                  sx={{ color: theme.palette.text.primary }}
+                  onClick={() => handleScrollToSection("experiencia")}
+                >
+                  <WorkHistoryOutlinedIcon />
+                  <span>Experiência</span>
                 </Button>
-                <Button variant="text" color="info" size="small">
-                  Educação
+
+                <Button
+                  variant="text"
+                  size="small"
+                  className="flex flex-col items-center"
+                  sx={{ color: theme.palette.text.primary }}
+                  onClick={() => handleScrollToSection("portfolio")}
+                >
+                  <CodeOutlinedIcon />
+                  <span>Portfólio</span>
                 </Button>
-                <Button variant="text" color="info" size="small">
-                  Experiência
+
+                <Button
+                  variant="text"
+                  size="small"
+                  className="flex flex-col items-center"
+                  sx={{ color: theme.palette.text.primary }}
+                  onClick={() => handleScrollToSection("contato")}
+                >
+                  <ContactPageOutlinedIcon />
+                  <span>Contato</span>
                 </Button>
-                <Button variant="text" color="info" size="small">
-                  Portfólio
+
+                <Button
+                  variant="text"
+                  size="small"
+                  className="flex flex-col items-center"
+                  sx={{ color: theme.palette.text.primary }}
+                  onClick={() => handleScrollToSection("certificacoes")}
+                >
+                  <WorkspacePremiumOutlinedIcon />
+                  <span>Certificações</span>
                 </Button>
-                <Button variant="text" color="info" size="small">
-                  Contato
-                </Button>
-                <Button variant="text" color="info" size="small">
-                  Certificações
-                </Button>
+
                 <ChooseTheme />
               </Box>
             </Box>
@@ -100,9 +162,9 @@ export default function Nav() {
             <Box
               sx={{
                 display: { xs: "flex", md: "none" },
-                justifyContent: "space-between", // Garante que a imagem fique no início e o menu no final
-                alignItems: "center", // Centraliza verticalmente
-                width: "100%", // Garante que ocupe toda a largura do AppBar
+                justifyContent: "space-between",
+                alignItems: "center",
+                width: "100%",
               }}
             >
               {/* Imagem no início */}
@@ -130,11 +192,57 @@ export default function Nav() {
                     </IconButton>
                   </Box>
                   <Divider sx={{ my: 3 }} />
-                  <MenuItem>Sobre Mim</MenuItem>
-                  <MenuItem>Educação</MenuItem>
-                  <MenuItem>Experiência</MenuItem>
-                  <MenuItem>Portfólio</MenuItem>
-                  <MenuItem>Contato</MenuItem>
+
+                  {/* Itens do Menu para Mobile */}
+                  <MenuItem
+                    onClick={() => {
+                      handleScrollToSection("apresentacao");
+                      toggleDrawer(false)();
+                    }}
+                  >
+                    Apresentação
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => {
+                      handleScrollToSection("educacao");
+                      toggleDrawer(false)();
+                    }}
+                  >
+                    Educação
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => {
+                      handleScrollToSection("experiencia");
+                      toggleDrawer(false)();
+                    }}
+                  >
+                    Experiência
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => {
+                      handleScrollToSection("portfolio");
+                      toggleDrawer(false)();
+                    }}
+                  >
+                    Portfólio
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => {
+                      handleScrollToSection("contato");
+                      toggleDrawer(false)();
+                    }}
+                  >
+                    Contato
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => {
+                      handleScrollToSection("certificacoes");
+                      toggleDrawer(false)();
+                    }}
+                  >
+                    Certificações
+                  </MenuItem>
+
                   <Box>
                     <ChooseTheme />
                   </Box>

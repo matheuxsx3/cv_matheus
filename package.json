@@ -21,15 +21,11 @@
     "@mui/icons-material": "^6.1.1",
     "@mui/material": "^6.1.1",
     "@pmndrs/branding": "^0.0.8",
-    "@react-three/drei": "^9.114.0",
-    "@react-three/fiber": "^8.17.8",
+    "framer-motion": "^11.7.0",
     "gh-pages": "^6.1.1",
-    "lamina": "^1.1.23",
-    "maath": "^0.10.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.2",
-    "three": "^0.168.0"
+    "react-router-dom": "^6.26.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
